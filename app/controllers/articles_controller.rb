@@ -14,9 +14,7 @@ class ArticlesController < ApplicationController
   end
   # instantiate a new article and attempts to save it
   def create
-    # dummy values for title and body
-    # todo: change for form values
-    @article = Article.new(title:"...",body: "...")
+    @article = Article.new(article_params)
     if @article.save
       #localhost:port/articles/#{@article.id}
       redirect_to @article
@@ -29,7 +27,7 @@ class ArticlesController < ApplicationController
   end
 
   private
-    def articles_params
+    def article_params
       params.require(:article).permit(:title, :body)
     end
 end

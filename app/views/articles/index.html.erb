@@ -1,3 +1,10 @@
 <h1>Hello, Rails!</h1>
 <h2>Articles#index</h2>
-<p>Find me in app/views/articles/index.html.erb</p>
+<br>
+<ul>
+  <% @articles.each do |article| %>
+    <li>
+      <%= article.title %>
+    </li>
+  <% end %>
+</ul>

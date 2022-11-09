@@ -4,4 +4,8 @@
 
 <ul>
   <l1><%= link_to "Edit", edit_article_path(@article) %></li>
+  <l1><%= link_to "Destroy", article_path(@article), data: {
+                      turbo_method: :delete,
+                      turbo_confirm: "Are you sure?"
+                  } %></li>
 </ul>
